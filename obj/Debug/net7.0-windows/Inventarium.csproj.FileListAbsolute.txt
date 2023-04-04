@@ -1,0 +1,17 @@
+D:\Andre\Projetos\Visual Studio\Inventarium\obj\Debug\net7.0-windows\Inventarium.csproj.AssemblyReference.cache
+D:\Andre\Projetos\Visual Studio\Inventarium\obj\Debug\net7.0-windows\Inventarium.frm_Inicio.resources
+D:\Andre\Projetos\Visual Studio\Inventarium\obj\Debug\net7.0-windows\Inventarium.csproj.GenerateResource.cache
+D:\Andre\Projetos\Visual Studio\Inventarium\obj\Debug\net7.0-windows\Inventarium.GeneratedMSBuildEditorConfig.editorconfig
+D:\Andre\Projetos\Visual Studio\Inventarium\obj\Debug\net7.0-windows\Inventarium.AssemblyInfoInputs.cache
+D:\Andre\Projetos\Visual Studio\Inventarium\obj\Debug\net7.0-windows\Inventarium.AssemblyInfo.cs
+D:\Andre\Projetos\Visual Studio\Inventarium\obj\Debug\net7.0-windows\Inventarium.csproj.CoreCompileInputs.cache
+D:\Andre\Projetos\Visual Studio\Inventarium\bin\Debug\net7.0-windows\Inventarium.exe
+D:\Andre\Projetos\Visual Studio\Inventarium\bin\Debug\net7.0-windows\Inventarium.deps.json
+D:\Andre\Projetos\Visual Studio\Inventarium\bin\Debug\net7.0-windows\Inventarium.runtimeconfig.json
+D:\Andre\Projetos\Visual Studio\Inventarium\bin\Debug\net7.0-windows\Inventarium.dll
+D:\Andre\Projetos\Visual Studio\Inventarium\bin\Debug\net7.0-windows\Inventarium.pdb
+D:\Andre\Projetos\Visual Studio\Inventarium\obj\Debug\net7.0-windows\Inventarium.dll
+D:\Andre\Projetos\Visual Studio\Inventarium\obj\Debug\net7.0-windows\refint\Inventarium.dll
+D:\Andre\Projetos\Visual Studio\Inventarium\obj\Debug\net7.0-windows\Inventarium.pdb
+D:\Andre\Projetos\Visual Studio\Inventarium\obj\Debug\net7.0-windows\Inventarium.genruntimeconfig.cache
+D:\Andre\Projetos\Visual Studio\Inventarium\obj\Debug\net7.0-windows\ref\Inventarium.dll
