@@ -48,11 +48,11 @@
             this.txtbox_RAM = new System.Windows.Forms.TextBox();
             this.txtbox_HD = new System.Windows.Forms.TextBox();
             this.txtbox_Hostname = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtbox_Fabricante = new System.Windows.Forms.TextBox();
+            this.txtbox_Modelo = new System.Windows.Forms.TextBox();
+            this.txtbox_NS = new System.Windows.Forms.TextBox();
+            this.txtbox_Patrimonio = new System.Windows.Forms.TextBox();
+            this.cbox_SO = new System.Windows.Forms.ComboBox();
             this.btn_Voltar = new System.Windows.Forms.Button();
             this.lbl_Minimize = new System.Windows.Forms.Label();
             this.lbl_Close = new System.Windows.Forms.Label();
@@ -67,11 +67,11 @@
             this.btn_Salvar.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Salvar.ForeColor = System.Drawing.Color.White;
             this.btn_Salvar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_Salvar.Location = new System.Drawing.Point(194, 495);
+            this.btn_Salvar.Location = new System.Drawing.Point(194, 518);
             this.btn_Salvar.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btn_Salvar.Name = "btn_Salvar";
             this.btn_Salvar.Size = new System.Drawing.Size(150, 40);
-            this.btn_Salvar.TabIndex = 3;
+            this.btn_Salvar.TabIndex = 12;
             this.btn_Salvar.Text = "Salvar";
             this.btn_Salvar.UseVisualStyleBackColor = false;
             // 
@@ -107,7 +107,8 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(28, 137);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(81)))), ((int)(((byte)(158)))));
+            this.label3.Location = new System.Drawing.Point(28, 160);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 22);
             this.label3.TabIndex = 6;
@@ -118,7 +119,8 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(194, 137);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(81)))), ((int)(((byte)(158)))));
+            this.label4.Location = new System.Drawing.Point(194, 160);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 22);
             this.label4.TabIndex = 7;
@@ -129,7 +131,8 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(28, 190);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(81)))), ((int)(((byte)(158)))));
+            this.label5.Location = new System.Drawing.Point(28, 213);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 22);
             this.label5.TabIndex = 8;
@@ -140,7 +143,8 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(194, 190);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(81)))), ((int)(((byte)(158)))));
+            this.label6.Location = new System.Drawing.Point(194, 213);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(127, 22);
             this.label6.TabIndex = 9;
@@ -151,7 +155,8 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(28, 243);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(81)))), ((int)(((byte)(158)))));
+            this.label7.Location = new System.Drawing.Point(28, 266);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(113, 22);
             this.label7.TabIndex = 10;
@@ -162,7 +167,8 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(194, 243);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(81)))), ((int)(((byte)(158)))));
+            this.label8.Location = new System.Drawing.Point(194, 266);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(127, 22);
             this.label8.TabIndex = 11;
@@ -173,7 +179,8 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(28, 296);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(81)))), ((int)(((byte)(158)))));
+            this.label9.Location = new System.Drawing.Point(28, 319);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(80, 22);
             this.label9.TabIndex = 12;
@@ -184,7 +191,8 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(194, 296);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(81)))), ((int)(((byte)(158)))));
+            this.label10.Location = new System.Drawing.Point(194, 319);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(59, 22);
             this.label10.TabIndex = 13;
@@ -195,7 +203,8 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(28, 354);
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(81)))), ((int)(((byte)(158)))));
+            this.label11.Location = new System.Drawing.Point(28, 377);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 22);
             this.label11.TabIndex = 14;
@@ -206,7 +215,8 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(194, 354);
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(81)))), ((int)(((byte)(158)))));
+            this.label12.Location = new System.Drawing.Point(194, 377);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(100, 22);
             this.label12.TabIndex = 15;
@@ -217,7 +227,8 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(28, 407);
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(81)))), ((int)(((byte)(158)))));
+            this.label13.Location = new System.Drawing.Point(28, 430);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(35, 22);
             this.label13.TabIndex = 16;
@@ -225,78 +236,78 @@
             // 
             // txtbox_Unidade
             // 
-            this.txtbox_Unidade.Location = new System.Drawing.Point(28, 162);
+            this.txtbox_Unidade.Location = new System.Drawing.Point(28, 185);
             this.txtbox_Unidade.Name = "txtbox_Unidade";
             this.txtbox_Unidade.Size = new System.Drawing.Size(150, 25);
-            this.txtbox_Unidade.TabIndex = 17;
+            this.txtbox_Unidade.TabIndex = 1;
             // 
             // txtbox_Depto
             // 
-            this.txtbox_Depto.Location = new System.Drawing.Point(194, 162);
+            this.txtbox_Depto.Location = new System.Drawing.Point(194, 185);
             this.txtbox_Depto.Name = "txtbox_Depto";
             this.txtbox_Depto.Size = new System.Drawing.Size(150, 25);
-            this.txtbox_Depto.TabIndex = 18;
+            this.txtbox_Depto.TabIndex = 2;
             // 
             // txtbox_Processador
             // 
-            this.txtbox_Processador.Location = new System.Drawing.Point(28, 215);
+            this.txtbox_Processador.Location = new System.Drawing.Point(28, 238);
             this.txtbox_Processador.Name = "txtbox_Processador";
             this.txtbox_Processador.Size = new System.Drawing.Size(150, 25);
-            this.txtbox_Processador.TabIndex = 19;
+            this.txtbox_Processador.TabIndex = 3;
             // 
             // txtbox_RAM
             // 
-            this.txtbox_RAM.Location = new System.Drawing.Point(194, 215);
+            this.txtbox_RAM.Location = new System.Drawing.Point(194, 238);
             this.txtbox_RAM.Name = "txtbox_RAM";
             this.txtbox_RAM.Size = new System.Drawing.Size(150, 25);
-            this.txtbox_RAM.TabIndex = 20;
+            this.txtbox_RAM.TabIndex = 4;
             // 
             // txtbox_HD
             // 
-            this.txtbox_HD.Location = new System.Drawing.Point(28, 268);
+            this.txtbox_HD.Location = new System.Drawing.Point(28, 291);
             this.txtbox_HD.Name = "txtbox_HD";
             this.txtbox_HD.Size = new System.Drawing.Size(150, 25);
-            this.txtbox_HD.TabIndex = 21;
+            this.txtbox_HD.TabIndex = 5;
             // 
             // txtbox_Hostname
             // 
-            this.txtbox_Hostname.Location = new System.Drawing.Point(194, 268);
+            this.txtbox_Hostname.Location = new System.Drawing.Point(194, 291);
             this.txtbox_Hostname.Name = "txtbox_Hostname";
             this.txtbox_Hostname.Size = new System.Drawing.Size(150, 25);
-            this.txtbox_Hostname.TabIndex = 22;
+            this.txtbox_Hostname.TabIndex = 6;
             // 
-            // textBox1
+            // txtbox_Fabricante
             // 
-            this.textBox1.Location = new System.Drawing.Point(28, 326);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 25);
-            this.textBox1.TabIndex = 23;
+            this.txtbox_Fabricante.Location = new System.Drawing.Point(28, 349);
+            this.txtbox_Fabricante.Name = "txtbox_Fabricante";
+            this.txtbox_Fabricante.Size = new System.Drawing.Size(150, 25);
+            this.txtbox_Fabricante.TabIndex = 7;
             // 
-            // textBox2
+            // txtbox_Modelo
             // 
-            this.textBox2.Location = new System.Drawing.Point(194, 326);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(150, 25);
-            this.textBox2.TabIndex = 24;
+            this.txtbox_Modelo.Location = new System.Drawing.Point(194, 349);
+            this.txtbox_Modelo.Name = "txtbox_Modelo";
+            this.txtbox_Modelo.Size = new System.Drawing.Size(150, 25);
+            this.txtbox_Modelo.TabIndex = 8;
             // 
-            // textBox3
+            // txtbox_NS
             // 
-            this.textBox3.Location = new System.Drawing.Point(28, 379);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(150, 25);
-            this.textBox3.TabIndex = 25;
+            this.txtbox_NS.Location = new System.Drawing.Point(28, 402);
+            this.txtbox_NS.Name = "txtbox_NS";
+            this.txtbox_NS.Size = new System.Drawing.Size(150, 25);
+            this.txtbox_NS.TabIndex = 9;
             // 
-            // textBox4
+            // txtbox_Patrimonio
             // 
-            this.textBox4.Location = new System.Drawing.Point(194, 379);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(150, 25);
-            this.textBox4.TabIndex = 26;
+            this.txtbox_Patrimonio.Location = new System.Drawing.Point(194, 402);
+            this.txtbox_Patrimonio.Name = "txtbox_Patrimonio";
+            this.txtbox_Patrimonio.Size = new System.Drawing.Size(150, 25);
+            this.txtbox_Patrimonio.TabIndex = 10;
             // 
-            // comboBox1
+            // cbox_SO
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbox_SO.FormattingEnabled = true;
+            this.cbox_SO.Items.AddRange(new object[] {
             "Windows 7",
             "Windows 8",
             "Windows 10",
@@ -306,10 +317,10 @@
             "Windows Server 2022",
             "Linux",
             "MacOS"});
-            this.comboBox1.Location = new System.Drawing.Point(28, 432);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 30);
-            this.comboBox1.TabIndex = 27;
+            this.cbox_SO.Location = new System.Drawing.Point(28, 455);
+            this.cbox_SO.Name = "cbox_SO";
+            this.cbox_SO.Size = new System.Drawing.Size(150, 30);
+            this.cbox_SO.TabIndex = 11;
             // 
             // btn_Voltar
             // 
@@ -320,11 +331,11 @@
             this.btn_Voltar.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Voltar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(81)))), ((int)(((byte)(158)))));
             this.btn_Voltar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_Voltar.Location = new System.Drawing.Point(28, 495);
+            this.btn_Voltar.Location = new System.Drawing.Point(28, 518);
             this.btn_Voltar.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
             this.btn_Voltar.Name = "btn_Voltar";
             this.btn_Voltar.Size = new System.Drawing.Size(150, 40);
-            this.btn_Voltar.TabIndex = 28;
+            this.btn_Voltar.TabIndex = 13;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.UseVisualStyleBackColor = false;
             // 
@@ -336,7 +347,7 @@
             this.lbl_Minimize.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Minimize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(81)))), ((int)(((byte)(158)))));
             this.lbl_Minimize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbl_Minimize.Location = new System.Drawing.Point(339, 2);
+            this.lbl_Minimize.Location = new System.Drawing.Point(354, 2);
             this.lbl_Minimize.Name = "lbl_Minimize";
             this.lbl_Minimize.Size = new System.Drawing.Size(22, 24);
             this.lbl_Minimize.TabIndex = 30;
@@ -350,7 +361,7 @@
             this.lbl_Close.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Close.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(81)))), ((int)(((byte)(158)))));
             this.lbl_Close.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbl_Close.Location = new System.Drawing.Point(358, 2);
+            this.lbl_Close.Location = new System.Drawing.Point(373, 2);
             this.lbl_Close.Name = "lbl_Close";
             this.lbl_Close.Size = new System.Drawing.Size(24, 24);
             this.lbl_Close.TabIndex = 29;
@@ -362,15 +373,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::Inventarium.Properties.Resources.bg__400x600_;
-            this.ClientSize = new System.Drawing.Size(384, 823);
+            this.ClientSize = new System.Drawing.Size(400, 600);
             this.Controls.Add(this.lbl_Minimize);
             this.Controls.Add(this.lbl_Close);
             this.Controls.Add(this.btn_Voltar);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cbox_SO);
+            this.Controls.Add(this.txtbox_Patrimonio);
+            this.Controls.Add(this.txtbox_NS);
+            this.Controls.Add(this.txtbox_Modelo);
+            this.Controls.Add(this.txtbox_Fabricante);
             this.Controls.Add(this.txtbox_Hostname);
             this.Controls.Add(this.txtbox_HD);
             this.Controls.Add(this.txtbox_RAM);
@@ -424,11 +435,11 @@
         private TextBox txtbox_RAM;
         private TextBox txtbox_HD;
         private TextBox txtbox_Hostname;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private ComboBox comboBox1;
+        private TextBox txtbox_Fabricante;
+        private TextBox txtbox_Modelo;
+        private TextBox txtbox_NS;
+        private TextBox txtbox_Patrimonio;
+        private ComboBox cbox_SO;
         private Button btn_Voltar;
         private Label lbl_Minimize;
         private Label lbl_Close;

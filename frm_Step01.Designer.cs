@@ -35,6 +35,7 @@
             this.btn_Avancar02 = new System.Windows.Forms.Button();
             this.lbl_Minimize = new System.Windows.Forms.Label();
             this.lbl_Close = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -60,8 +61,7 @@
             resources.GetString("cbox_Equipamento.Items2"),
             resources.GetString("cbox_Equipamento.Items3"),
             resources.GetString("cbox_Equipamento.Items4"),
-            resources.GetString("cbox_Equipamento.Items5"),
-            resources.GetString("cbox_Equipamento.Items6")});
+            resources.GetString("cbox_Equipamento.Items5")});
             this.cbox_Equipamento.Name = "cbox_Equipamento";
             // 
             // btn_Avancar02
@@ -87,11 +87,21 @@
             this.lbl_Close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Close.Name = "lbl_Close";
             // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(81)))), ((int)(((byte)(158)))));
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // frm_Step01
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Inventarium.Properties.Resources.bg;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl_Minimize);
             this.Controls.Add(this.lbl_Close);
             this.Controls.Add(this.btn_Avancar02);
@@ -114,5 +124,6 @@
         private Button btn_Avancar02;
         private Label lbl_Minimize;
         private Label lbl_Close;
+        private Button button1;
     }
 }
