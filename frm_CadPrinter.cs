@@ -10,22 +10,17 @@ using System.Windows.Forms;
 
 namespace Inventarium
 {
-    public partial class frm_Inicio : Form
+    public partial class frm_CadPrinter : Form
     {
-        public frm_Inicio()
+        public frm_CadPrinter()
         {
             InitializeComponent();
         }
 
-        private void frm_Inicio_Load(object sender, EventArgs e)
+        private void btn_Voltar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btn_Avancar_Click(object sender, EventArgs e)
-        {
-            frm_Step01 inicio= new frm_Step01();
-            inicio.Show();
+            frm_Step01 step01 = new();
+            step01.Show();
             this.Hide();
         }
 

@@ -338,6 +338,7 @@
             this.btn_Voltar.TabIndex = 13;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.UseVisualStyleBackColor = false;
+            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
             // lbl_Minimize
             // 
@@ -366,6 +367,7 @@
             this.lbl_Close.Size = new System.Drawing.Size(24, 24);
             this.lbl_Close.TabIndex = 29;
             this.lbl_Close.Text = "X";
+            this.lbl_Close.Click += new System.EventHandler(this.lbl_Close_Click);
             // 
             // frm_CadPC
             // 

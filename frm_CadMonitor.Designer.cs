@@ -75,6 +75,7 @@
             this.lbl_Close.Size = new System.Drawing.Size(24, 24);
             this.lbl_Close.TabIndex = 60;
             this.lbl_Close.Text = "X";
+            this.lbl_Close.Click += new System.EventHandler(this.lbl_Close_Click);
             // 
             // label1
             // 
@@ -95,7 +96,7 @@
             this.txtbox_Unidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtbox_Unidade.Name = "txtbox_Unidade";
             this.txtbox_Unidade.Size = new System.Drawing.Size(150, 25);
-            this.txtbox_Unidade.TabIndex = 62;
+            this.txtbox_Unidade.TabIndex = 1;
             // 
             // label3
             // 
@@ -114,7 +115,7 @@
             this.txtbox_Depto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtbox_Depto.Name = "txtbox_Depto";
             this.txtbox_Depto.Size = new System.Drawing.Size(150, 25);
-            this.txtbox_Depto.TabIndex = 64;
+            this.txtbox_Depto.TabIndex = 2;
             // 
             // label2
             // 
@@ -129,38 +130,39 @@
             // 
             // txtbox_Patrimonio
             // 
-            this.txtbox_Patrimonio.Location = new System.Drawing.Point(209, 296);
+            this.txtbox_Patrimonio.Location = new System.Drawing.Point(209, 291);
             this.txtbox_Patrimonio.Name = "txtbox_Patrimonio";
             this.txtbox_Patrimonio.Size = new System.Drawing.Size(150, 25);
             this.txtbox_Patrimonio.TabIndex = 73;
+            this.txtbox_Patrimonio.TextChanged += new System.EventHandler(this.txtbox_Patrimonio_TextChanged);
             // 
             // txtbox_NS
             // 
-            this.txtbox_NS.Location = new System.Drawing.Point(43, 296);
+            this.txtbox_NS.Location = new System.Drawing.Point(43, 291);
             this.txtbox_NS.Name = "txtbox_NS";
             this.txtbox_NS.Size = new System.Drawing.Size(150, 25);
-            this.txtbox_NS.TabIndex = 72;
+            this.txtbox_NS.TabIndex = 5;
             // 
             // txtbox_Modelo
             // 
-            this.txtbox_Modelo.Location = new System.Drawing.Point(209, 243);
+            this.txtbox_Modelo.Location = new System.Drawing.Point(209, 238);
             this.txtbox_Modelo.Name = "txtbox_Modelo";
             this.txtbox_Modelo.Size = new System.Drawing.Size(150, 25);
-            this.txtbox_Modelo.TabIndex = 71;
+            this.txtbox_Modelo.TabIndex = 4;
             // 
             // txtbox_Fabricante
             // 
-            this.txtbox_Fabricante.Location = new System.Drawing.Point(43, 243);
+            this.txtbox_Fabricante.Location = new System.Drawing.Point(43, 238);
             this.txtbox_Fabricante.Name = "txtbox_Fabricante";
             this.txtbox_Fabricante.Size = new System.Drawing.Size(150, 25);
-            this.txtbox_Fabricante.TabIndex = 70;
+            this.txtbox_Fabricante.TabIndex = 3;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(209, 271);
+            this.label12.Location = new System.Drawing.Point(209, 266);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(100, 22);
             this.label12.TabIndex = 69;
@@ -171,7 +173,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(45, 271);
+            this.label11.Location = new System.Drawing.Point(45, 266);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 22);
             this.label11.TabIndex = 68;
@@ -182,7 +184,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(209, 218);
+            this.label10.Location = new System.Drawing.Point(209, 213);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(59, 22);
             this.label10.TabIndex = 67;
@@ -193,7 +195,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(43, 218);
+            this.label9.Location = new System.Drawing.Point(43, 213);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(80, 22);
             this.label9.TabIndex = 66;
@@ -215,6 +217,7 @@
             this.btn_Voltar.TabIndex = 75;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.UseVisualStyleBackColor = false;
+            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
             // btn_Salvar
             // 
@@ -276,7 +279,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frm_CadMonitor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_CadMonitor";
+            this.Text = " ";
             this.ResumeLayout(false);
             this.PerformLayout();
 

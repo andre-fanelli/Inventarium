@@ -62,6 +62,7 @@
             this.btn_Avancar.TabIndex = 1;
             this.btn_Avancar.Text = "Avançar";
             this.btn_Avancar.UseVisualStyleBackColor = false;
+            this.btn_Avancar.Click += new System.EventHandler(this.btn_Avancar_Click);
             // 
             // label2
             // 
@@ -84,6 +85,7 @@
             this.lbl_Close.Size = new System.Drawing.Size(24, 24);
             this.lbl_Close.TabIndex = 3;
             this.lbl_Close.Text = "X";
+            this.lbl_Close.Click += new System.EventHandler(this.lbl_Close_Click);
             // 
             // lbl_Minimize
             // 

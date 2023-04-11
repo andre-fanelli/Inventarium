@@ -16,5 +16,56 @@ namespace Inventarium
         {
             InitializeComponent();
         }
+
+        private void btn_Avancar02_Click(object sender, EventArgs e) 
+        {
+            if (cmb_Equipamento.SelectedIndex.Equals(-1)) 
+            {
+                MessageBox.Show("Selecione um equipamento!", "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                cmb_Equipamento.Focus();
+            }
+            else
+            {
+                switch (cmb_Equipamento.SelectedItem)
+                {
+                    case "Computador":
+                        frm_CadPC cadPC = new();
+                        cadPC.Show();
+                        this.Hide();
+                        break;
+
+                    case "Notebook":
+                        frm_CadNote cadNote = new();
+                        cadNote.Show();
+                        this.Hide();
+                        break;
+
+                    case "Monitor":
+                        frm_CadMonitor cadMonitor = new();
+                        cadMonitor.Show();
+                        this.Hide();
+                        break;
+                    case "Impressora":
+                        frm_CadPrinter cadPrinter = new();
+                        cadPrinter.Show();
+                        this.Hide();
+                        break;
+                }
+            }
+
+        }
+
+        private void lbl_Close_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja fechar o programa?", "Encerrar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == (DialogResult.No))
+            {
+                return;
+            }
+
+            else
+            {
+                Application.Exit();
+            }
+        }
     }
 }

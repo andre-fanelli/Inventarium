@@ -10,6 +10,9 @@
     <Compile Update="frm_CadPC.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frm_CadPrinter.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frm_Inicio.cs">
       <SubType>Form</SubType>
     </Compile>

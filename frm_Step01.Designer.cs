@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Step01));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbox_Equipamento = new System.Windows.Forms.ComboBox();
+            this.cmb_Equipamento = new System.Windows.Forms.ComboBox();
             this.btn_Avancar02 = new System.Windows.Forms.Button();
             this.lbl_Minimize = new System.Windows.Forms.Label();
             this.lbl_Close = new System.Windows.Forms.Label();
@@ -51,18 +51,19 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Name = "label2";
             // 
-            // cbox_Equipamento
+            // cmb_Equipamento
             // 
-            resources.ApplyResources(this.cbox_Equipamento, "cbox_Equipamento");
-            this.cbox_Equipamento.FormattingEnabled = true;
-            this.cbox_Equipamento.Items.AddRange(new object[] {
-            resources.GetString("cbox_Equipamento.Items"),
-            resources.GetString("cbox_Equipamento.Items1"),
-            resources.GetString("cbox_Equipamento.Items2"),
-            resources.GetString("cbox_Equipamento.Items3"),
-            resources.GetString("cbox_Equipamento.Items4"),
-            resources.GetString("cbox_Equipamento.Items5")});
-            this.cbox_Equipamento.Name = "cbox_Equipamento";
+            resources.ApplyResources(this.cmb_Equipamento, "cmb_Equipamento");
+            this.cmb_Equipamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Equipamento.FormattingEnabled = true;
+            this.cmb_Equipamento.Items.AddRange(new object[] {
+            resources.GetString("cmb_Equipamento.Items"),
+            resources.GetString("cmb_Equipamento.Items1"),
+            resources.GetString("cmb_Equipamento.Items2"),
+            resources.GetString("cmb_Equipamento.Items3"),
+            resources.GetString("cmb_Equipamento.Items4"),
+            resources.GetString("cmb_Equipamento.Items5")});
+            this.cmb_Equipamento.Name = "cmb_Equipamento";
             // 
             // btn_Avancar02
             // 
@@ -72,6 +73,7 @@
             this.btn_Avancar02.ForeColor = System.Drawing.Color.White;
             this.btn_Avancar02.Name = "btn_Avancar02";
             this.btn_Avancar02.UseVisualStyleBackColor = false;
+            this.btn_Avancar02.Click += new System.EventHandler(this.btn_Avancar02_Click);
             // 
             // lbl_Minimize
             // 
@@ -86,6 +88,7 @@
             this.lbl_Close.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Close.Name = "lbl_Close";
+            this.lbl_Close.Click += new System.EventHandler(this.lbl_Close_Click);
             // 
             // button1
             // 
@@ -105,7 +108,7 @@
             this.Controls.Add(this.lbl_Minimize);
             this.Controls.Add(this.lbl_Close);
             this.Controls.Add(this.btn_Avancar02);
-            this.Controls.Add(this.cbox_Equipamento);
+            this.Controls.Add(this.cmb_Equipamento);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(81)))), ((int)(((byte)(158)))));
@@ -120,7 +123,7 @@
 
         private Label label1;
         private Label label2;
-        private ComboBox cbox_Equipamento;
+        private ComboBox cmb_Equipamento;
         private Button btn_Avancar02;
         private Label lbl_Minimize;
         private Label lbl_Close;

@@ -71,35 +71,23 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Cadastro de Equipamento</value>
   </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>78, 85</value>
+  </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>297, 52</value>
+    <value>238, 52</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Agora, selecione um equipamento que faça parte do conjunto para cadastrar.</value>
+    <value>Agora, selecione um equipamento para cadastrar.</value>
   </data>
   <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="cbox_Equipamento.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="cmb_Equipamento.Font" type="System.Drawing.Font, System.Drawing">
     <value>Poppins, 9.75pt</value>
   </data>
-  <data name="cbox_Equipamento.Items2" xml:space="preserve">
-    <value>Monitor</value>
-  </data>
-  <data name="cbox_Equipamento.Items3" xml:space="preserve">
-    <value>Impressora</value>
-  </data>
-  <data name="cbox_Equipamento.Items4" xml:space="preserve">
-    <value>Ativo de Rede</value>
-  </data>
-  <data name="cbox_Equipamento.Items5" xml:space="preserve">
-    <value>Tablet</value>
-  </data>
-  <data name="cbox_Equipamento.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cmb_Equipamento.Size" type="System.Drawing.Size, System.Drawing">
     <value>297, 31</value>
-  </data>
-  <data name="cbox_Equipamento.Text" xml:space="preserve">
-    <value>Selecione o equipamento</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btn_Avancar02.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
@@ -160,17 +148,11 @@
   <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 401</value>
-  </data>
   <data name="button1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 4, 3, 4</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>145, 60</value>
-  </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Sair</value>

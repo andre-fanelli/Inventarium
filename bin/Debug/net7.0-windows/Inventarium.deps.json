@@ -9,6 +9,11 @@
       "Inventarium/1.0.0": {
         "runtime": {
           "Inventarium.dll": {}
+        },
+        "resources": {
+          "pt-BR/Inventarium.resources.dll": {
+            "locale": "pt-BR"
+          }
         }
       }
     }

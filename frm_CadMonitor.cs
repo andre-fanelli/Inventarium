@@ -16,5 +16,30 @@ namespace Inventarium
         {
             InitializeComponent();
         }
+
+        private void txtbox_Patrimonio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Voltar_Click(object sender, EventArgs e)
+        {
+            frm_Step01 step01 = new();
+            step01.Show();
+            this.Hide();
+        }
+
+        private void lbl_Close_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja fechar o programa?", "Encerrar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == (DialogResult.No))
+            {
+                return;
+            }
+
+            else
+            {
+                Application.Exit();
+            }
+        }
     }
 }
