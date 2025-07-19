@@ -6,7 +6,11 @@
 }
 
 <div class="container mt-5">
-    <h2 class="mb-4">🗂️ Parque Inventário</h2>
+    <div class="mb-4">
+        <h2>
+            <i class="fa-solid fa-folder-open"></i> Parque Inventário
+        </h2>
+    </div>
     <div class="row">
         <div class="col-md-4 mb-3">
             <a href="@Url.Action("Index", "Computers")" class="text-decoration-none">
@@ -84,13 +88,17 @@
 
     @if (User.IsInRole("Administrator"))
     {
-            <h2 class="mb-4">👥 Gestão </h2>
+        <div class="mb-4">
+            <h2>
+                <i class="fa-solid fa-users-gear"></i> Gestão
+            </h2>
+        </div>
             <div class="row">
                 <div class="col-md-4 mb-3">
                 <a href="@Url.Action("Create", "Users")" class="text-decoration-none">
-                        <div class="card shadow-sm border-danger">
-                            <div class="card-body text-center">
-                                <i class="fas fa-user-plus fa-2x text-danger"></i>
+                        <div class="card shadow-sm border-success">
+                        <div class="card-body text-center">
+                            <i class="fa-solid fa-user-plus fa-2x text-success"></i>
                                 <h5 class="card-title mt-2">Criar Usuário</h5>
                             </div>
                         </div>
@@ -101,7 +109,7 @@
                 <a href="@Url.Action("Index", "Users")" class="text-decoration-none">
                         <div class="card shadow-sm border-info">
                             <div class="card-body text-center">
-                                <i class="fas fa-users fa-2x text-info"></i>
+                                <i class="fa-solid fa-user-group fa-2x text-info"></i>
                                 <h5 class="card-title mt-2">Listar Usuários</h5>
                             </div>
                         </div>
@@ -110,10 +118,10 @@
 
                 <div class="col-md-4 mb-3">
                     <a  href="javascript:void(0);" id="btnGerarExe" title="Gera um executável do programa para cadastro do inventário" class="text-decoration-none">
-                        <div class="card shadow-sm border-success">
+                        <div class="card shadow-sm border-dark">
                             <div class="card-body text-center">
-                                <i class="fa-regular fa-file-zipper fa-2x text-success"></i>
-                                <h5 class="card-title mt-2">Baixar programa (.zip)</h5>
+                                <i class="fa-regular fa-file-zipper fa-2x text-dark"></i>
+                                <h5 class="card-title mt-2">Baixar programa</h5>
                             </div>
                         </div>
                         </a>

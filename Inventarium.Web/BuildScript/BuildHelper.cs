@@ -8,66 +8,42 @@ namespace InventariumWebApp.BuildScript
     {
         public static async Task<string> BuildExecutableAsync(string tenantId, string userEmail, IHubContext<BuildHub> hubContext)
         {
-            var sourcePath = @"D:\Andre\Projetos\Visual Studio\Inventarium-Solution\InventariumDesktopApp";
+            var sourcePath = @"D:\Andre\Projetos\Visual Studio\Inventarium\Inventarium.Desktop";
             var tempPath = Path.Combine(Directory.GetCurrentDirectory(), "..","TempBuild", tenantId);
 
             // Garantir que a pasta esteja limpa
-            var gitDir = Path.Combine(tempPath, ".git");
             if (Directory.Exists(tempPath))
-            {
                 Directory.Delete(tempPath, true);
-            }
+            Directory.CreateDirectory(tempPath);
 
-            if (!Directory.Exists(tempPath))
-            {
-                Directory.CreateDirectory(tempPath);
-            }
+            await hubContext.Clients.All.SendAsync("ReceiveProgressUpdate", "Copiando arquivos...");
 
             var tempDirectoryInfo = new DirectoryInfo(tempPath);
             tempDirectoryInfo.Attributes = FileAttributes.Normal;
 
             await hubContext.Clients.All.SendAsync("ReceiveProgressUpdate", "Iniciando o processo de construção...");
 
-            // Copiar tudo
+            // Copiar todos os arquivos, exceto .git
             foreach (var dirPath in Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories))
             {
-                // Ignorar diretórios .git e outros que podem ter problemas de permissão
-                if (dirPath.Contains(".git"))
-                    continue;
-
+                if (dirPath.Contains(".git")) continue;
                 Directory.CreateDirectory(dirPath.Replace(sourcePath, tempPath));
             }
 
             foreach (var filePath in Directory.GetFiles(sourcePath, "*.*", SearchOption.AllDirectories))
             {
-                // Ignorar arquivos dentro de diretórios .git
-                if (filePath.Contains(".git"))
-                    continue;
-
+                if (filePath.Contains(".git")) continue;
                 try
                 {
-                    // Verificar se o arquivo tem permissão de leitura antes de copiar
                     var fileInfo = new FileInfo(filePath);
-                    if (fileInfo.IsReadOnly || !File.Exists(filePath))
-                        continue;
-
-                    File.Copy(filePath, filePath.Replace(sourcePath, tempPath), true);
+                    if (!fileInfo.IsReadOnly && File.Exists(filePath))
+                        File.Copy(filePath, filePath.Replace(sourcePath, tempPath), true);
                 }
-                catch (UnauthorizedAccessException ex)
-                {
-                    // Log detalhado do erro
-                    Console.WriteLine($"Erro ao acessar o arquivo {filePath}: {ex.Message}");
-                    continue;
-                }
-                catch (Exception ex)
-                {
-                    // Log detalhado de outras exceções
-                    Console.WriteLine($"Erro ao copiar arquivo {filePath}: {ex.Message}");
-                }
+                catch { continue; }
             }
 
             // Enviar progresso após copiar os arquivos
-            await hubContext.Clients.All.SendAsync("ReceiveProgressUpdate", "Arquivos copiados, substituindo TenantId...");
+            await hubContext.Clients.All.SendAsync("ReceiveProgressUpdate", "Substituindo TenantId...");
 
             // Substituir o TenantId
             var appconfigCsPath = Directory.GetFiles(tempPath, "AppConfig.cs", SearchOption.AllDirectories).FirstOrDefault();
@@ -79,70 +55,76 @@ namespace InventariumWebApp.BuildScript
             }
 
             // Enviar progresso após substituir o TenantId
-            await hubContext.Clients.All.SendAsync("ReceiveProgressUpdate", "TenantId substituído com sucesso.");
+            await hubContext.Clients.All.SendAsync("ReceiveProgressUpdate", "TenantId substituído com sucesso!");
 
-            // Compilar usando MSBuild
-            var msbuildPath = @"D:\Visual Studio\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\MSBuild.exe"; // Ajuste se necessário
-            var solutionFile = Directory.GetFiles(tempPath, "*.sln", SearchOption.AllDirectories).FirstOrDefault();
+            await hubContext.Clients.All.SendAsync("ReceiveProgressUpdate", "Iniciando compilação...");
 
-            if (solutionFile == null)
-                throw new Exception("Arquivo .sln não encontrado!");
+            // Diretório de saída
+            var publishPath = Path.Combine(Directory.GetCurrentDirectory(), "ExportBuilds", $"Inventarium_{tenantId}");
+            if (Directory.Exists(publishPath)) Directory.Delete(publishPath, true);
+            Directory.CreateDirectory(publishPath);
 
+            // dotnet publish para gerar único EXE self-contained
             var processInfo = new ProcessStartInfo
             {
-                FileName = msbuildPath,
-                Arguments = $"\"{solutionFile}\" /p:Configuration=Release",
+                FileName = "dotnet",
+                Arguments = $"publish \"{tempPath}\" -c Release -r win-x64 --self-contained false /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true -o \"{publishPath}\"",
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
                 UseShellExecute = false,
                 CreateNoWindow = true
             };
 
-            var process = Process.Start(processInfo);
+            var process = new Process { StartInfo = processInfo };
+            process.Start();
 
-            // Aqui você pode ler o processo de compilação e enviar mensagens de progresso em tempo real
-            process.OutputDataReceived += (sender, args) =>
+            // Leitura em tempo real
+            while (!process.StandardOutput.EndOfStream)
             {
-                if (args.Data != null)
+                var line = await process.StandardOutput.ReadLineAsync();
+                if (!string.IsNullOrWhiteSpace(line))
                 {
-                    // Envia as atualizações do processo de compilação para o cliente
-                    hubContext.Clients.All.SendAsync("ReceiveProgressUpdate", args.Data);
+                    await hubContext.Clients.All.SendAsync("ReceiveProgressUpdate", line);
                 }
-            };
+            }
 
-            process.BeginOutputReadLine();
+            // Leitura de erros
+            string error = await process.StandardError.ReadToEndAsync();
             await process.WaitForExitAsync();
 
             if (process.ExitCode != 0)
-            {
-                var error = await process.StandardError.ReadToEndAsync();
                 throw new Exception($"Erro ao compilar: {error}");
-            }
+
+
+            await hubContext.Clients.All.SendAsync("ReceiveProgressUpdate", "Compilação concluída!");
+
+            // Localizar o .exe gerado
+            var exePath = Directory.GetFiles(publishPath, "*.exe").FirstOrDefault();
+            if (exePath == null)
+                throw new Exception("Executável não encontrado!");
+
+            await hubContext.Clients.All.SendAsync("ReceiveProgressUpdate", $"Pronto para download: {Path.GetFileName(exePath)}");
 
             // Enviar progresso final após a compilação
-            await hubContext.Clients.All.SendAsync("ReceiveProgressUpdate", "Compilação concluída, criando o arquivo zip...");
+            await hubContext.Clients.All.SendAsync("ReceiveProgressUpdate", "Compilação concluída!");
 
-            // Zipar
-            var releasePath = Directory.GetDirectories(tempPath, "Release", SearchOption.AllDirectories).FirstOrDefault();
-            if (releasePath == null)
-                throw new Exception("Pasta Release não encontrada!");
+            // Encontrar o executável gerado
+            exePath = Directory.GetFiles(publishPath, "*.exe").FirstOrDefault();
+            if (exePath == null)
+                throw new Exception("Executável não encontrado após publicação!");
 
-            var zipFileName = $"{tenantId}_{DateTime.Now:yyyyMMddHHmm}.zip";
-            var zipPath = Path.Combine(Directory.GetCurrentDirectory(), "ExportBuilds", zipFileName);
+            var exportFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "exports");
+            if (!Directory.Exists(exportFolder))
+                Directory.CreateDirectory(exportFolder);
 
-            if (!Directory.Exists(Path.Combine(Directory.GetCurrentDirectory(), "ExportBuilds")))
-                Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "ExportBuilds"));
+            var fileName = $"Inventarium_{DateTime.Now:yyyyMMddHHmm}.exe";
+            var finalExePath = Path.Combine(exportFolder, fileName);
 
-            if (File.Exists(zipPath))
-                File.Delete(zipPath);
+            File.Copy(exePath, finalExePath, true);
 
-            System.IO.Compression.ZipFile.CreateFromDirectory(releasePath, zipPath);
+            await hubContext.Clients.All.SendAsync("ReceiveProgressUpdate", $"Executável gerado: {fileName}");
 
-            // Enviar mensagem final com o caminho do arquivo
-            await hubContext.Clients.All.SendAsync("ReceiveProgressUpdate", $"Arquivo gerado: {zipFileName}");
-
-
-            return $"/exports/{zipFileName}";
+            return $"/exports/{fileName}";
         }
     }
 }
