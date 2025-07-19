@@ -1,0 +1,127 @@
+﻿
+@await Html.PartialAsync("_DashboardNavbar")
+
+@{
+    ViewData["Title"] = "Painel de Controle";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">🗂️ Parque Inventário</h2>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <a href="@Url.Action("Index", "Computers")" class="text-decoration-none">
+                <div class="card shadow-sm border-primary">
+                    <div class="card-body text-center">
+                        <i class="fas fa-desktop fa-2x text-primary"></i>
+                        <h5 class="card-title mt-2">Computadores</h5>
+                        <span class="badge bg-primary">@ViewBag.ComputersCount</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <a href="@Url.Action("Index", "Notebooks")" class="text-decoration-none">
+                <div class="card shadow-sm border-success">
+                    <div class="card-body text-center">
+                        <i class="fas fa-laptop fa-2x text-success"></i>
+                        <h5 class="card-title mt-2">Notebooks</h5>
+                        <span class="badge bg-success">@ViewBag.NotebooksCount</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <a href="@Url.Action("Index", "Displays")" class="text-decoration-none">
+                <div class="card shadow-sm border-warning">
+                    <div class="card-body text-center">
+                        <i class="fas fa-tv fa-2x text-warning"></i>
+                        <h5 class="card-title mt-2">Monitores</h5>
+                        <span class="badge bg-warning text-dark">@ViewBag.DisplaysCount</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <a href="@Url.Action("Index", "Printers")" class="text-decoration-none">
+                <div class="card shadow-sm border-secondary">
+                    <div class="card-body text-center">
+                        <i class="fas fa-print fa-2x text-secondary"></i>
+                        <h5 class="card-title mt-2">Impressoras</h5>
+                        <span class="badge bg-secondary">@ViewBag.PrintersCount</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <a href="@Url.Action("Index", "Networks")" class="text-decoration-none">
+                <div class="card shadow-sm border-info">
+                    <div class="card-body text-center">
+                        <i class="fas fa-network-wired fa-2x text-info"></i>
+                        <h5 class="card-title mt-2">Equip. de Rede</h5>
+                        <span class="badge bg-info text-dark">@ViewBag.NetworksCount</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <a href="@Url.Action("Index", "Tablets")" class="text-decoration-none">
+                <div class="card shadow-sm border-dark">
+                    <div class="card-body text-center">
+                        <i class="fas fa-tablet-alt fa-2x text-dark"></i>
+                        <h5 class="card-title mt-2">Tablets</h5>
+                        <span class="badge bg-dark">@ViewBag.TabletsCount</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+ <hr />
+
+    @if (User.IsInRole("Administrator"))
+    {
+            <h2 class="mb-4">👥 Gestão </h2>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                <a href="@Url.Action("Create", "Users")" class="text-decoration-none">
+                        <div class="card shadow-sm border-danger">
+                            <div class="card-body text-center">
+                                <i class="fas fa-user-plus fa-2x text-danger"></i>
+                                <h5 class="card-title mt-2">Criar Usuário</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                <a href="@Url.Action("Index", "Users")" class="text-decoration-none">
+                        <div class="card shadow-sm border-info">
+                            <div class="card-body text-center">
+                                <i class="fas fa-users fa-2x text-info"></i>
+                                <h5 class="card-title mt-2">Listar Usuários</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <a  href="javascript:void(0);" id="btnGerarExe" title="Gera um executável do programa para cadastro do inventário" class="text-decoration-none">
+                        <div class="card shadow-sm border-success">
+                            <div class="card-body text-center">
+                                <i class="fa-regular fa-file-zipper fa-2x text-success"></i>
+                                <h5 class="card-title mt-2">Baixar programa (.zip)</h5>
+                            </div>
+                        </div>
+                        </a>
+                </div>
+
+            </div>
+    }
+</div>
+@section Scripts {
+    <script src="~/js/dashboard.js"></script>
+}

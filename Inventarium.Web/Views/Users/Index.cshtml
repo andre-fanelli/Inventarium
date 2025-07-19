@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUser>
+
+@Html.AntiForgeryToken()
+
+<script>
+    window.userDeleteUrl = '@Url.Action("Delete", "Users")';
+    window.successMessage = @Html.Raw(Json.Serialize(TempData["SuccessDeleteMessage"]));
+    window.errorMessage = @Html.Raw(Json.Serialize(TempData["ErrorMessage"]));
+</script>
+
+@{
+    ViewData["Title"] = "Listar Usuários";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+                <tr>
+                    <td>@user.Email</td>
+                    <td>
+                        <!-- Ações futuras aqui, como editar, deletar etc -->
+                    <button class="btn btn-danger btn-sm btn-delete-user" title="Excluir" data-userid="@user.Id" data-useremail="@user.Email">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Index", "Dashboard")" class="btn btn-primary">
+    <i class="fas fa-arrow-left"></i> Voltar para o Dashboard
+</a>
+
+@section Scripts {
+    <script src="~/js/user-management.js"></script>
+    <script>
+        @if (TempData["SuccessCreateMessage"] != null)
+        {
+            <text>
+                Swal.fire({
+                title: 'Sucesso!',
+                text: '@TempData["SuccessCreateMessage"]',
+                icon: 'success',
+                confirmButtonText: 'OK'
+                });
+            </text>
+        }
+    </script>
+}

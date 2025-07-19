@@ -1,0 +1,63 @@
+@model InventariumWebApp.Models.CadRede
+@await Html.PartialAsync("_DeleteConfirmationModal", "Networks")
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Unidade" class="control-label"></label>
+                <input asp-for="Unidade" class="form-control" />
+                <span asp-validation-for="Unidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Depto" class="control-label"></label>
+                <input asp-for="Depto" class="form-control" />
+                <span asp-validation-for="Depto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fabricante" class="control-label"></label>
+                <input asp-for="Fabricante" class="form-control" />
+                <span asp-validation-for="Fabricante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Modelo" class="control-label"></label>
+                <input asp-for="Modelo" class="form-control" />
+                <span asp-validation-for="Modelo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tipo" class="control-label"></label>
+                <input asp-for="Tipo" class="form-control" />
+                <span asp-validation-for="Tipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ns" class="control-label"></label>
+                <input asp-for="Ns" class="form-control" />
+                <span asp-validation-for="Ns" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Patrimonio" class="control-label"></label>
+                <input asp-for="Patrimonio" class="form-control" />
+                <span asp-validation-for="Patrimonio" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <a href="@Url.Action("Index", "Networks")" class="btn btn-primary">
+                    <i class="fas fa-arrow-left"></i> Voltar
+                </a> |
+                <input type="submit" value="Salvar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

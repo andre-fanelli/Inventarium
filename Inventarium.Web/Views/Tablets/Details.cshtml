@@ -1,0 +1,57 @@
+@model InventariumWebApp.Models.CadTablet
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Unidade)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Unidade)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Depto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Depto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fabricante)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fabricante)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Modelo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Modelo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ns)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ns)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Patrimonio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Patrimonio)
+        </dd>
+    </dl>
+</div>
+<div>
+   <a href="@Url.Action("Index", "Tablets")" class="btn btn-primary">
+        <i class="fas fa-arrow-left"></i> Voltar
+    </a> |
+    <a asp-action="Edit" asp-route-id="@Model?.Id" title="Editar" class="btn btn-success">
+        <i class="fas fa-edit"></i> Editar
+    </a>
+</div>
