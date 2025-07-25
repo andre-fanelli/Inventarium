@@ -1,23 +1,23 @@
 ﻿@page
 @model RegisterConfirmationModel
 @{
-    ViewData["Title"] = "Confirmação de Registro";
+    ViewData["Title"] = "Register Confirmation";
 }
 
 <h1>@ViewData["Title"]</h1>
 
      <div class="text-center mt-5">
-    <h1 class="display-5 text-success">Confirmação de e-mail</h1>
-    <p class="lead">Enviamos um link de confirmação para <strong>@Model.Email</strong>.</p>
-    <p>Por favor, verifique sua caixa de entrada (ou spam) e clique no link para ativar sua conta.</p>
+    <h1 class="display-5 text-success">E-mail Confirmation</h1>
+    <p class="lead">We have sent a confirmation link to <strong>@Model.Email</strong>.</p>
+    <p>Please check your inbox (or spam) and click the link to activate your account.</p>
     </div>
 
     @section Scripts {
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
                 Swal.fire({
-                    title: 'Quase lá!',
-                    text: 'Enviamos um link de confirmação para @Model.Email.',
+                    title: 'Almost there!',
+            text: 'We have sent a confirmation link to @Model.Email.',
                     icon: 'success',
                     confirmButtonText: 'OK',
                     timer: 7000

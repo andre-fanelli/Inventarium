@@ -67,7 +67,7 @@ namespace InventariumWebApp.Controllers
                 if (result.Succeeded)
                 {
                     await _userManager.AddToRoleAsync(user, model.Role);
-                    TempData["SuccessCreateMessage"] = "Usuario criado com sucesso!";
+                    TempData["SuccessCreateMessage"] = "User created successfully!";
                     return RedirectToAction(nameof(Index));
                 }
                 foreach (var error in result.Errors)
@@ -84,7 +84,7 @@ namespace InventariumWebApp.Controllers
             var user = await _userManager.FindByIdAsync(data.Id);
             if (user == null)
             {
-                return Json(new { success = false, message = "Usuário não encontrado." });
+                return Json(new { success = false, message = "User not found." });
             }
 
             var result = await _userManager.DeleteAsync(user);
@@ -95,7 +95,7 @@ namespace InventariumWebApp.Controllers
             else
             {
                 var errorMessages = string.Join(" | ", result.Errors.Select(e => e.Description));
-                return Json(new { success = false, message = "Erro ao excluir o usuário." });
+                return Json(new { success = false, message = "Error deleting user." });
             }
         }
         public class DeleteUserDto

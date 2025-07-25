@@ -5,11 +5,11 @@ namespace InventariumWebApp.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "Nome")]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
-        [Display(Name = "Sobrenome")]
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
         [Required]
@@ -17,25 +17,25 @@ namespace InventariumWebApp.Models
         [Display(Name = "E-mail")]
         public string Email { get; set; }
 
-        [Display(Name = "Empresa")]
+        [Display(Name = "Company")]
         public string Company { get; set; }
 
         [Phone]
-        [Display(Name = "Telefone")]
+        [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Senha")]
+        [Display(Name = "Password")]
         public string Password { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Confirme a Senha")]
-        [Compare("Password", ErrorMessage = "As senhas não coincidem!")]
+        [Display(Name = "Confirm Password")]
+        [Compare("Password", ErrorMessage = "Passwords don't match!")]
         public string ConfirmPassword { get; set; }
 
-        [Display(Name = "Perfil")]
+        [Display(Name = "Profile")]
         public string Role { get; set; }
     }
 }

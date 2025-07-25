@@ -10,7 +10,7 @@
     <script>
         Swal.fire({
             icon: 'success',
-            title: 'Cadastro realizado com sucesso!',
+            title: 'Registration completed successfully!',
             text: '@TempData["RegisterSuccess"]',
             confirmButtonText: 'Ok'
         });
@@ -20,8 +20,8 @@
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
     <div class="card shadow-lg rounded-4 p-4" style="width: 100%; max-width: 450px;">
         <div class="text-center mb-4">
-            <h2 class="fw-bold">Entrar</h2>
-            <p class="text-muted">Acesse sua conta</p>
+            <h2 class="fw-bold">Login</h2>
+            <p class="text-muted">Access your account</p>
         </div>
 
         <form id="account" method="post">
@@ -34,8 +34,8 @@
             </div>
 
             <div class="form-floating mb-3">
-                <input asp-for="Input.Password" class="form-control" type="password" autocomplete="current-password" aria-required="true" placeholder="Senha" />
-                <label asp-for="Input.Password">Senha</label>
+                <input asp-for="Input.Password" class="form-control" type="password" autocomplete="current-password" aria-required="true" placeholder="Password" />
+                <label asp-for="Input.Password">Password</label>
                 <span asp-validation-for="Input.Password" class="text-danger small"></span>
             </div>
 
@@ -47,15 +47,15 @@
             </div>
 
             <button id="login-submit" type="submit" class="btn btn-primary w-100 mb-2">
-                <i class="bi bi-box-arrow-in-right me-1"></i> Entrar
+                <i class="bi bi-box-arrow-in-right me-1"></i> Sign in
             </button>
 
             <a class="btn btn-outline-primary w-100 mb-3" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">
-                <i class="bi bi-person-plus me-1"></i> Registrar
+                <i class="bi bi-person-plus me-1"></i> Sign up
             </a>
 
             <div class="text-center">
-                <a id="forgot-password" asp-page="./ForgotPassword">Esqueceu a senha?</a>
+                <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
             </div>
         </form>
 
@@ -64,7 +64,7 @@
         {
             <hr />
             <div class="text-center">
-                <p class="mb-2">Ou entre com</p>
+                <p class="mb-2">Or sign in with:</p>
                 <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post">
                     @foreach (var provider in Model.ExternalLogins!)
                     {
