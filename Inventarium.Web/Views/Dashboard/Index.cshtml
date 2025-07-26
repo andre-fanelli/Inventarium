@@ -2,13 +2,13 @@
 @await Html.PartialAsync("_DashboardNavbar")
 
 @{
-    ViewData["Title"] = "Painel de Controle";
+    ViewData["Title"] = "Dashboard";
 }
 
 <div class="container mt-5">
     <div class="mb-4">
         <h2>
-            <i class="fa-solid fa-folder-open"></i> Parque Inventário
+            <i class="fa-solid fa-folder-open"></i> Overview - IT Assets
         </h2>
     </div>
     <div class="row">
@@ -17,7 +17,7 @@
                 <div class="card shadow-sm border-primary">
                     <div class="card-body text-center">
                         <i class="fas fa-desktop fa-2x text-primary"></i>
-                        <h5 class="card-title mt-2">Computadores</h5>
+                        <h5 class="card-title mt-2">Desktops</h5>
                         <span class="badge bg-primary">@ViewBag.ComputersCount</span>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                 <div class="card shadow-sm border-warning">
                     <div class="card-body text-center">
                         <i class="fas fa-tv fa-2x text-warning"></i>
-                        <h5 class="card-title mt-2">Monitores</h5>
+                        <h5 class="card-title mt-2">Monitors</h5>
                         <span class="badge bg-warning text-dark">@ViewBag.DisplaysCount</span>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                 <div class="card shadow-sm border-secondary">
                     <div class="card-body text-center">
                         <i class="fas fa-print fa-2x text-secondary"></i>
-                        <h5 class="card-title mt-2">Impressoras</h5>
+                        <h5 class="card-title mt-2">Printers</h5>
                         <span class="badge bg-secondary">@ViewBag.PrintersCount</span>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                 <div class="card shadow-sm border-info">
                     <div class="card-body text-center">
                         <i class="fas fa-network-wired fa-2x text-info"></i>
-                        <h5 class="card-title mt-2">Equip. de Rede</h5>
+                        <h5 class="card-title mt-2">Network Equipment</h5>
                         <span class="badge bg-info text-dark">@ViewBag.NetworksCount</span>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
     {
         <div class="mb-4">
             <h2>
-                <i class="fa-solid fa-users-gear"></i> Gestão
+                <i class="fa-solid fa-users-gear"></i> Management
             </h2>
         </div>
             <div class="row">
@@ -99,7 +99,7 @@
                         <div class="card shadow-sm border-success">
                         <div class="card-body text-center">
                             <i class="fa-solid fa-user-plus fa-2x text-success"></i>
-                                <h5 class="card-title mt-2">Criar Usuário</h5>
+                                <h5 class="card-title mt-2">New User</h5>
                             </div>
                         </div>
                     </a>
@@ -110,18 +110,18 @@
                         <div class="card shadow-sm border-info">
                             <div class="card-body text-center">
                                 <i class="fa-solid fa-user-group fa-2x text-info"></i>
-                                <h5 class="card-title mt-2">Listar Usuários</h5>
+                            <h5 class="card-title mt-2">List users</h5>
                             </div>
                         </div>
                     </a>
                 </div>
 
                 <div class="col-md-4 mb-3">
-                    <a  href="javascript:void(0);" id="btnGerarExe" title="Gera um executável do programa para cadastro do inventário" class="text-decoration-none">
+                    <a  href="javascript:void(0);" id="btnGerarExe" title="Generates an executable for inventory registration" class="text-decoration-none">
                         <div class="card shadow-sm border-dark">
                             <div class="card-body text-center">
                                 <i class="fa-regular fa-file-zipper fa-2x text-dark"></i>
-                                <h5 class="card-title mt-2">Baixar programa</h5>
+                                <h5 class="card-title mt-2">Download program</h5>
                             </div>
                         </div>
                         </a>

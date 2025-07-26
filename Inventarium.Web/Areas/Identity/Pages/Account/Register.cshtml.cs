@@ -63,34 +63,34 @@ namespace InventariumWebApp.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
-            [Display(Name = "Nome")]
+            [Display(Name = "First Name")]
             public string FirstName { get; set; }
 
             [Required]
-            [Display(Name = "Sobrenome")]
+            [Display(Name = "Last Name")]
             public string LastName { get; set; }
 
             [Required]
             [EmailAddress]
-            [Display(Name = "Email")]
+            [Display(Name = "E-mail")]
             public string Email { get; set; }
             [Required]
-            [Display(Name = "Empresa")]
+            [Display(Name = "Company")]
             public string Company { get; set; }
 
             [Phone]
-            [Display(Name = "Telefone")]
+            [Display(Name = "Phone Number")]
             public string PhoneNumber { get; set; }
 
             [Required]
-            [StringLength(100, ErrorMessage = "A {0} deve ter ao menos {2} e no máximo {1} caracteres.", MinimumLength = 6)]
+            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at most {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
-            [Display(Name = "Senha")]
+            [Display(Name = "Password")]
             public string Password { get; set; }
 
             [DataType(DataType.Password)]
-            [Display(Name = "Confirmar senha")]
-            [Compare("Password", ErrorMessage = "A senha e a confirmação não correspondem.")]
+            [Display(Name = "Confirm Password")]
+            [Compare("Password", ErrorMessage = "The passwords do not match.")]
             public string ConfirmPassword { get; set; }
         }
 

@@ -1,0 +1,2 @@
+D:\Andre\Projetos\Visual Studio\Inventarium\Inventarium.Web\ExportBuilds\Inventarium_b9cc1e95-c48f-4fd5-b5fc-ca9864e9a645\Inventarium.pdb
+D:\Andre\Projetos\Visual Studio\Inventarium\Inventarium.Web\ExportBuilds\Inventarium_b9cc1e95-c48f-4fd5-b5fc-ca9864e9a645\Inventarium.exe

@@ -76,19 +76,18 @@
                     </div>
                 </div>
             </div>
-            <!-- Barra de progresso -->
+
             <div class="progress mt-2">
                 <div id="password-strength-bar" class="progress-bar" style="width: 0%;"></div>
             </div>
             <small id="password-strength-text" class="form-text text-muted"></small>
 
-            <!-- Checklist de requisitos -->
             <p>Password requirements:</p>
             <ul class="list-unstyled mt-2" id="password-requirements">
                 <li id="check-length" class="text-danger"><i class="fas fa-times-circle me-1"></i> Minimum 8 characters</li>
-                <li id="check-upper" class="text-danger"><i class="fas fa-times-circle me-1"></i> At least 1 Upper</li>
-                <li id="check-number" class="text-danger"><i class="fas fa-times-circle me-1"></i> At leat 1 number</li>
-                <li id="check-special" class="text-danger"><i class="fas fa-times-circle me-1"></i> At leat 1 special character</li>
+                <li id="check-upper" class="text-danger"><i class="fas fa-times-circle me-1"></i> At least 1 Uppercase letter</li>
+                <li id="check-number" class="text-danger"><i class="fas fa-times-circle me-1"></i> At least 1 number</li>
+                <li id="check-special" class="text-danger"><i class="fas fa-times-circle me-1"></i> At least 1 special character</li>
             </ul>
 
             <div class="d-grid mb-3">
@@ -115,7 +114,7 @@
                 icon: 'success',
                 title: 'Registrado com sucesso!',
                 text: '@TempData["RegisterSuccess"]',
-                confirmButtonText: 'Ir para login'
+                confirmButtonText: 'Go to Sign In'
             }).then((result) => {
                 if (result.isConfirmed) {
                     window.location.href = '/Identity/Account/Login';

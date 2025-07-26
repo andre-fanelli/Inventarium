@@ -8,7 +8,7 @@
 
 <nav class="navbar navbar-expand-lg mb-auto rounded-2" style="background-color: #e3f2fd;" w-100>
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Painel de Controle</a>
+        <a class="navbar-brand" href="#">Dashboard</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashboardNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -18,38 +18,39 @@
                 <!-- Relatórios -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                        Relatórios
+                        Report
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Exportar para PDF</a></li>
-                        <li><a class="dropdown-item" href="#">Exportar para Excel</a></li>
+                        <li><a class="dropdown-item" href="#">Export to PDF</a></li>
+                        <li><a class="dropdown-item" href="#">Export to CSV</a></li>
                     </ul>
                 </li>
 
                 <!-- Gerenciar -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="gerenciarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Gestão
+                    Management
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="gerenciarDropdown">
-                        <li><a class="dropdown-item" href="@Url.Action("Create", "Users")">Criar Usuário</a></li>
-                        <li><a class="dropdown-item" href="@Url.Action("Index", "Users")">Listar Usuários</a></li>
+                        <li><a class="dropdown-item" href="@Url.Action("Create", "Users")">New User</a></li>
+                        <li><a class="dropdown-item" href="@Url.Action("Index", "Users")">List Users</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li>
                             <a class="dropdown-item" href="javascript:void(0);" id="btnGerarExe"
-                               title="Gera um executável do programa para cadastro do inventário">Baixar Programa</a>
+                               title="Generates an executable for inventory registration">Download Program
+                            </a>
                         </li>
                     </ul>
                 </li>
 
                 <!-- Arquivo -->
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Imprimir</a>
+                    <a class="nav-link" href="#">Print</a>
                 </li>
 
             </ul>
             <span class="navbar-text">
-                Empresa: @user.Company | Acesso: @(isAdmin ? "Administrador" : "Leitura")
+                Company: @user.Company | Role: @(isAdmin ? "Administrator" : "Read Only")
             </span>
         </div>
     </div>

@@ -52,7 +52,7 @@ namespace InventariumWebApp.Areas.Identity.Pages.Account
             [DataType(DataType.Password)]
             public string Password { get; set; }
 
-            [Display(Name = "Continuar conectado?")]
+            [Display(Name = "Remember me?")]
             public bool RememberMe { get; set; }
         }
 
@@ -93,8 +93,8 @@ namespace InventariumWebApp.Areas.Identity.Pages.Account
                 // Verificar se o TenantId está configurado para o usuário
                 if (string.IsNullOrEmpty(user.TenantId))
                 {
-                    _logger.LogWarning("Login attempt failed: TenantId não está atribuído ao usuário {Email}.", Input.Email);
-                    ModelState.AddModelError(string.Empty, "Conta de usuário não configurada corretamente. Entre em contato com o suporte.");
+                    _logger.LogWarning("Login attempt failed: TenantId is not assigned to the user {Email}.", Input.Email);
+                    ModelState.AddModelError(string.Empty, "User account not configured correctly. Contact support.");
                     return Page();
                 }
 
