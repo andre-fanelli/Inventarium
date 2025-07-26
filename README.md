@@ -55,31 +55,8 @@ Inventarium/
 │
 ├── Inventarium.Web/        # Web app (ASP.NET Core MVC)
 ├── Inventarium.Desktop/    # Desktop app
-├── Migrations/             # EF Core migrations
 └── README.md               # Project documentation
 ```
-
----
-
-## ⚙️ Getting Started
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/andre-fanelli/Inventarium.git
-   ```
-
-2. Update your database connection string in `appsettings.json`.
-
-3. Apply migrations:
-   ```bash
-   dotnet ef database update
-   ```
-
-4. Run the project:
-   ```bash
-   dotnet run
-   ```
-
 ---
 
 ## ✨ Roadmap / To-Do
