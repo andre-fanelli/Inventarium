@@ -1,5 +1,6 @@
 ﻿@page
 @model LoginModel
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 
 @{
     ViewData["Title"] = "Login";
@@ -20,7 +21,7 @@
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 90vh;">
     <div class="card shadow-lg rounded-4 p-4" style="width: 100%; max-width: 450px;">
         <div class="text-center mb-4">
-            <h2 class="fw-bold">Login</h2>
+            <h2 class="fw-bold">@Localizer["Login"]</h2>
             <p class="text-muted">Access your account</p>
         </div>
 

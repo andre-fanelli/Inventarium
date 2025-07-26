@@ -1,13 +1,15 @@
 ﻿@page
 @model InventariumWebApp.Areas.Identity.Pages.Account.RegisterModel
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = @Localizer["Register"];
 }
+
 
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 95vh;">
     <div class="card shadow-lg rounded-4 p-4" style="width: 100%; max-width: 550px;">
         <div class="text-center mb-4">
-            <h2 class="fw-bold">Create Account</h2>         
+            <h2 class="fw-bold">@Localizer["CreateAccount"]</h2>
         </div>
 
         <form asp-page="/Account/Register" asp-area="Identity" method="post">
@@ -17,14 +19,14 @@
                 <div class="col-md-6">
                     <div class="form-floating">
                         <input asp-for="Input.FirstName" class="form-control" placeholder="First Name" />
-                        <label asp-for="Input.FirstName">First Name</label>
+                        <label asp-for="Input.FirstName">@Localizer["FirstName"]</label>
                         <span asp-validation-for="Input.FirstName" class="text-danger small"></span>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
                         <input asp-for="Input.LastName" class="form-control" placeholder="Last Name" />
-                        <label asp-for="Input.LastName">Last Name</label>
+                        <label asp-for="Input.LastName">@Localizer["LastName"]</label>
                         <span asp-validation-for="Input.LastName" class="text-danger small"></span>
                     </div>
                 </div>
@@ -32,7 +34,7 @@
 
             <div class="form-floating mb-3">
                 <input asp-for="Input.Email" class="form-control" placeholder="email@dominio.com" />
-                <label asp-for="Input.Email">E-mail</label>
+                <label asp-for="Input.Email">@Localizer["Email"]</label>
                 <span asp-validation-for="Input.Email" class="text-danger small"></span>
             </div>
 
@@ -40,14 +42,14 @@
                 <div class="col-md-6">
                     <div class="form-floating">
                         <input asp-for="Input.Company" class="form-control" placeholder="Company" />
-                        <label asp-for="Input.Company">Company</label>
+                        <label asp-for="Input.Company">@Localizer["Company"]</label>
                         <span asp-validation-for="Input.Company" class="text-danger small"></span>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
                         <input asp-for="Input.PhoneNumber" class="form-control" placeholder="Phone Number" />
-                        <label asp-for="Input.PhoneNumber">Phone Number</label>
+                        <label asp-for="Input.PhoneNumber">@Localizer["PhoneNumber"]</label>
                         <span asp-validation-for="Input.PhoneNumber" class="text-danger small"></span>
                     </div>
                 </div>
@@ -56,7 +58,7 @@
                 <div class="col-md-6">
                     <div class="form-floating">
                         <input asp-for="Input.Password" class="form-control" type="password" id="password" placeholder="Password" />
-                        <label asp-for="Input.Password">Password</label>
+                        <label asp-for="Input.Password">@Localizer["Password"]</label>
                         <span asp-validation-for="Input.Password" class="text-danger small"></span>
                         <button type="button" class="btn btn-sm btn-light position-absolute end-0 top-0 mt-2 me-2"
                                 onclick="togglePasswordVisibility('password')">
@@ -67,7 +69,7 @@
                 <div class="col-md-6">
                     <div class="form-floating">
                         <input asp-for="Input.ConfirmPassword" class="form-control" type="password" id="confirmPassword" placeholder="Confirm Password" />
-                        <label asp-for="Input.ConfirmPassword">Confirm Password</label>
+                        <label asp-for="Input.ConfirmPassword">@Localizer["ConfirmPassword"]</label>
                         <span asp-validation-for="Input.ConfirmPassword" class="text-danger small"></span>
                         <button type="button" class="btn btn-sm btn-light position-absolute end-0 top-0 mt-2 me-2"
                                 onclick="togglePasswordVisibility('confirmPassword')">
@@ -82,22 +84,22 @@
             </div>
             <small id="password-strength-text" class="form-text text-muted"></small>
 
-            <p>Password requirements:</p>
+            <p>@Localizer["PasswordRequirements"]:</p>
             <ul class="list-unstyled mt-2" id="password-requirements">
-                <li id="check-length" class="text-danger"><i class="fas fa-times-circle me-1"></i> Minimum 8 characters</li>
-                <li id="check-upper" class="text-danger"><i class="fas fa-times-circle me-1"></i> At least 1 Uppercase letter</li>
-                <li id="check-number" class="text-danger"><i class="fas fa-times-circle me-1"></i> At least 1 number</li>
-                <li id="check-special" class="text-danger"><i class="fas fa-times-circle me-1"></i> At least 1 special character</li>
+                <li id="check-length" class="text-danger"><i class="fas fa-times-circle me-1"></i> @Localizer["MinChar"]</li>
+                <li id="check-upper" class="text-danger"><i class="fas fa-times-circle me-1"></i> @Localizer["UppercaseLetter"]</li>
+                <li id="check-number" class="text-danger"><i class="fas fa-times-circle me-1"></i> @Localizer["Number"]</li>
+                <li id="check-special" class="text-danger"><i class="fas fa-times-circle me-1"></i> @Localizer["SpecialChar"]</li>
             </ul>
 
             <div class="d-grid mb-3">
                 <button type="submit" id="register-button" class="btn btn-primary btn-lg" disabled>
-                    <i class="bi bi-person-plus me-1"></i> Create
+                    <i class="bi bi-person-plus me-1"></i> @Localizer["Create"]
                 </button>
             </div>
 
             <div class="text-center">
-                <p>Already registered? <a asp-page="/Account/Login" asp-area="Identity">Login</a></p>
+                <p>@Localizer["AlreadyRegistered"] <a asp-page="/Account/Login" asp-area="Identity"> @Localizer["Login"]</a></p>
             </div>
         </form>
     </div>

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.SignalR;
 using InventariumWebApp.BuildScript;
 using Microsoft.Extensions.FileProviders;
 using InventariumWebApp.Middleware;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -59,6 +60,22 @@ builder.Services.AddRazorPages();
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<EmailService>();
 
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+builder.Services.AddControllersWithViews()
+    .AddViewLocalization()
+    .AddDataAnnotationsLocalization();
+
+var supportedCultures = new[] { "en", "pt-BR" };
+
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    var cultures = supportedCultures.Select(c => new System.Globalization.CultureInfo(c)).ToList();
+    options.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("pt-BR");
+    options.SupportedCultures = cultures;
+    options.SupportedUICultures = cultures;
+});
+
 // Constrói o aplicativo
 var app = builder.Build();
 
@@ -94,6 +111,9 @@ app.UseRouting();
 app.UseAuthentication();
 // Adiciona o middleware de claim do tenant logo após a autenticação
 app.UseMiddleware<TenantClaimsMiddleware>();
+
+var locOptions = app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>();
+app.UseRequestLocalization(locOptions.Value);
 app.UseAuthorization();
 
 // Inicializa as roles
