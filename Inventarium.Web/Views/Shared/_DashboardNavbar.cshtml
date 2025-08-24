@@ -18,11 +18,38 @@
                 <!-- Relatórios -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                        Report
+                        Reports
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Export to PDF</a></li>
-                        <li><a class="dropdown-item" href="#">Export to CSV</a></li>
+
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle" href="#">PDF</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="@Url.Action("PcReportPdf", "Reports")">Desktops</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("NoteReportPdf", "Reports")">Notebooks</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("MonitorReportPdf", "Reports")">Monitors</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("PrinterReportPdf", "Reports")">Printers</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("NetworkReportPdf", "Reports")">Networks</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("TabletReportPdf", "Reports")">Tablets</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="@Url.Action("AllAssetsReportPdf", "Reports")">All Assets</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle" href="#">Excel</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="@Url.Action("PcReportExcel", "Reports")">Desktops</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("NoteReportExcel", "Reports")">Notebooks</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("MonitorReportExcel", "Reports")">Monitors</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("PrinterReportExcel", "Reports")">Printers</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("NetworkReportExcel", "Reports")">Networks</a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("TabletReportExcel", "Reports")">Tablets</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="@Url.Action("AllAssetsReportExcel", "Reports")">All Assets</a></li>
+                            </ul>
+                        </li>
+
                     </ul>
                 </li>
 
@@ -37,7 +64,7 @@
                         <li><hr class="dropdown-divider"></li>
                         <li>
                             <a class="dropdown-item" href="javascript:void(0);" id="btnGerarExe"
-                               title="Generates an executable for inventory registration">Download Program
+                               title="Generates an executable for inventory registration">Generate Program
                             </a>
                         </li>
                     </ul>
@@ -56,3 +83,4 @@
     </div>
 </nav>
 
+<script src="~/js/dropdown-submenu.js" asp-append-version="true"></script>

@@ -40,7 +40,7 @@ namespace InventariumWebApp.Data
             base.OnModelCreating(modelBuilder);
 
             // Obter o TenantId diretamente das claims do usuário
-            string tenantId = null;
+            string? tenantId = null;
             if (_httpContextAccessor.HttpContext?.User?.Identity?.IsAuthenticated == true)
             {
                 tenantId = _httpContextAccessor.HttpContext.User.FindFirst("TenantId")?.Value;
@@ -66,7 +66,7 @@ namespace InventariumWebApp.Data
             modelBuilder.ApplyConfiguration(new CadTabletConfiguration());
         }
 
-        public string GetCurrentTenantId()
+        public string? GetCurrentTenantId()
         {
             if (_httpContextAccessor.HttpContext?.User?.Identity?.IsAuthenticated != true)
             {

@@ -1,47 +1,71 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using InventariumWebApp.Data;
 using InventariumWebApp.Models;
 using Microsoft.AspNetCore.Authorization;
-using System.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Localization;
+using Microsoft.Graph;
+using Microsoft.Graph.Models;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace InventariumWebApp.Controllers
 {
     public class ComputersController : Controller
     {
+        private readonly IStringLocalizer<Shared> _localizer;
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
 
-        public ComputersController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
+        public ComputersController(ApplicationDbContext context, UserManager<ApplicationUser> userManager, IStringLocalizer<Shared> localizer)
         {
             _context = context;
             _userManager = userManager;
+            _localizer = localizer;
         }
 
         private async Task<string?> GetTenantIdAsync()
         {
-            var userName = User.Identity?.Name;
-
-            if (string.IsNullOrEmpty(userName))
-                return null;
-
-            var user = await _context.Users
-                .Where(u => u.UserName == userName)
-                .FirstOrDefaultAsync();
-
-            return user?.TenantId;
+            {
+                var user = await _userManager.GetUserAsync(User);
+                return user?.TenantId;
+            }
         }
+
+        private async Task<CadPc?> GetComputerByIdAsync(int? id)
+        {
+            var tenantId = await GetTenantIdAsync();
+            if (tenantId == null || id == null) return null;
+
+            return await _context.Computers.FirstOrDefaultAsync(c => c.Id == id && c.TenantId == tenantId);
+        }
+
 
         // GET: Computers
         [Authorize(Roles = "Administrator, Default")]
         public async Task<IActionResult> Index()
         {
+            ViewData["DataTableLanguage"] = new Dictionary<string, string>
+            {
+                ["lengthMenu"] = _localizer["DataTable_lengthMenu"],
+                ["zeroRecords"] = _localizer["DataTable_zeroRecords"],
+                ["info"] = _localizer["DataTable_info"],
+                ["infoEmpty"] = _localizer["DataTable_infoEmpty"],
+                ["infoFiltered"] = _localizer["DataTable_infoFiltered"],
+                ["search"] = _localizer["DataTable_search"],
+                ["paginateFirst"] = _localizer["DataTable_paginateFirst"],
+                ["paginateLast"] = _localizer["DataTable_paginateLast"],
+                ["paginateNext"] = _localizer["DataTable_paginateNext"],
+                ["paginatePrevious"] = _localizer["DataTable_paginatePrevious"],
+                ["colvis"] = _localizer["DataTable_colvis"]
+            };
+
+
             var tenantId = (await GetTenantIdAsync())?.Trim();
             if (tenantId == null) return Unauthorized();
 
@@ -55,14 +79,7 @@ namespace InventariumWebApp.Controllers
         [Authorize(Roles = "Administrator,Default")]
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Computers == null) return NotFound();
-
-            var tenantId = await GetTenantIdAsync();
-            if (tenantId == null) return Unauthorized();
-
-            var cadPc = await _context.Computers
-                .FirstOrDefaultAsync(m => m.Id == id && m.TenantId == tenantId);
-
+            var cadPc = await GetComputerByIdAsync(id);
             if (cadPc == null) return NotFound();
 
             return View(cadPc);

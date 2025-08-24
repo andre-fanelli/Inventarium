@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -19,6 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="EPPlus" Version="8.1.0" />
+    <PackageReference Include="iTextSharp.LGPLv2.Core" Version="3.7.4" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.20" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.20" />
@@ -29,6 +31,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Localization" Version="9.0.7" />
+    <PackageReference Include="Microsoft.Graph" Version="5.91.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.12" />
     <PackageReference Include="Moq" Version="4.20.72" />
     <PackageReference Include="System.Resources.Extensions" Version="7.0.20" />
@@ -39,12 +42,37 @@
     <Folder Include="ExportBuilds\" />
     <Folder Include="TempBuilds\" />
     <Folder Include="Tests\" />
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\Areas.Identity.Pages.Account.Register.en.resx">
-      <SubType>Designer</SubType>
+    <Compile Update="Resources\Models\CadPc.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CadPc.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Areas.Identity.Pages.Account.Login.pt-BR.resx">
+         <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas.Identity.Pages.Account.Login.en.resx">
+         <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Areas.Identity.Pages.Account.Register.en.resx">
+         <SubType>Designer</SubType>
+    </EmbeddedResource>
+	<EmbeddedResource Update="Resources\Models\CadPc.resx">
+		<Generator>PublicResXFileCodeGenerator</Generator>
+		<LastGenOutput>CadPc.Designer.cs</LastGenOutput>
+		<CustomToolNamespace>Resources.Models</CustomToolNamespace>
+  </EmbeddedResource>
+	  <EmbeddedResource Update="Resources\Models\CadPc.pt-BR.resx">
+	    <Generator>PublicResXFileCodeGenerator</Generator>
+	    <LastGenOutput>CadPc.pt-BR.Designer.cs</LastGenOutput>
+	    <CustomToolNamespace>Resources.Models</CustomToolNamespace>
+	  </EmbeddedResource>
   </ItemGroup>
 
 </Project>

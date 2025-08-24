@@ -20,4 +20,19 @@ html {
 
 body {
     margin-bottom: 60px;
+    background-image: url('/images/inventarium-bg.png');
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
+
+.dropdown-submenu {
+    position: relative;
+}
+
+    .dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-left: 0.1rem;
+        margin-right: 0.1rem;
+    }

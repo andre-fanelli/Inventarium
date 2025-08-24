@@ -1,4 +1,37 @@
-﻿$(document).ready(function () {
+﻿const translations = @Html.Raw(dtLang);
+
+document.getElementById("selectAll").addEventListener("click", function () {
+    const checkboxes = document.querySelectorAll(".selectRow");
+    checkboxes.forEach(cb => cb.checked = this.checked);
+});
+
+function getSelectedIds() {
+    const ids = [];
+    document.querySelectorAll(".selectRow:checked").forEach(cb => {
+        ids.push(cb.value);
+    });
+    return ids;
+}
+
+document.getElementById("exportPdf").addEventListener("click", function () {
+    const ids = getSelectedIds();
+    if (ids.length === 0) {
+        alert("Selecione ao menos um equipamento.");
+        return;
+    }
+    window.location.href = "/Computers/ExportPdf?ids=" + ids.join(",");
+});
+
+document.getElementById("exportExcel").addEventListener("click", function () {
+    const ids = getSelectedIds();
+    if (ids.length === 0) {
+        alert("Selecione ao menos um equipamento.");
+        return;
+    }
+    window.location.href = "/Computers/ExportExcel?ids=" + ids.join(",");
+});
+
+$(document).ready(function () {
     $('#computersTable').DataTable({
         scrollX: true,
         responsive: false,
@@ -8,25 +41,25 @@
         buttons: [
             {
                 extend: 'colvis',
-                text: 'Mostrar/Ocultar Colunas',
+                text: translations.colvis,
                 className: 'btn btn-secondary btn-sm dropdown-toggle mb-2'
             }
         ],
         language: {
-            lengthMenu: "Exibir _MENU_ registros por página",
-            zeroRecords: "Nenhum registro encontrado",
-            info: "Página _PAGE_ de _PAGES_",
-            infoEmpty: "Nenhum dado disponível",
-            infoFiltered: "(filtrado de _MAX_ registros no total)",
-            search: "Pesquisar:",
+            lengthMenu: translations.lengthMenu,
+            zeroRecords: translations.zeroRecords,
+            info: translations.info,
+            infoEmpty: translations.infoEmpty,
+            infoFiltered: translations.infoFiltered,
+            search: translations.search,
             paginate: {
-                first: "Primeira",
-                last: "Última",
-                next: "Próxima",
-                previous: "Anterior"
+                first: translations.paginateFirst,
+                last: translations.paginateLast,
+                next: translations.paginateNext,
+                previous: translations.paginatePrevious
             },
             buttons: {
-                colvis: 'Mostrar colunas'
+                colvis: translations.colvis
             }
         }
     });

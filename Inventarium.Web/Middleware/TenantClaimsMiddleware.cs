@@ -26,7 +26,7 @@ namespace InventariumWebApp.Middleware
                     // Obtém o UserManager do serviço de escopo
                     var userManager = context.RequestServices.GetRequiredService<UserManager<ApplicationUser>>();
 
-                    // Obtém o usuário pelo name identifier (geralmente é o user ID)
+                    // Obtém o usuário pelo name identifier 
                     var userId = context.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
                     if (!string.IsNullOrEmpty(userId))
                     {
