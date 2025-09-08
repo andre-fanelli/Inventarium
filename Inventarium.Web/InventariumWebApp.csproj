@@ -46,10 +46,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Resources\Models\CadPc.Designer.cs">
+    <Compile Update="Resources\Models\CadPc.en.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>CadPc.resx</DependentUpon>
+      <DependentUpon>CadPc.en.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -63,9 +63,9 @@
     <EmbeddedResource Update="Resources\Areas.Identity.Pages.Account.Register.en.resx">
          <SubType>Designer</SubType>
     </EmbeddedResource>
-	<EmbeddedResource Update="Resources\Models\CadPc.resx">
+	<EmbeddedResource Update="Resources\Models\CadPc.en.resx">
 		<Generator>PublicResXFileCodeGenerator</Generator>
-		<LastGenOutput>CadPc.Designer.cs</LastGenOutput>
+		<LastGenOutput>CadPc.en.Designer.cs</LastGenOutput>
 		<CustomToolNamespace>Resources.Models</CustomToolNamespace>
   </EmbeddedResource>
 	  <EmbeddedResource Update="Resources\Models\CadPc.pt-BR.resx">

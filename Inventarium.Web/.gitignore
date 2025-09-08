@@ -407,3 +407,9 @@ appsettings.Development.json
 
 # JetBrains Rider
 *.sln.iml
+
+# Folders
+TempBuild/
+Inventarium.Web/ExportBuild/
+Inventarium.Web/TempBuilds/
+Inventarium.Web/wwwroot/exports/

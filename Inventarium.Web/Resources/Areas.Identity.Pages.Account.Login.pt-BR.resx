@@ -168,4 +168,7 @@
   <data name="UppercaseLetter" xml:space="preserve">
     <value>Pelo menos 1 letra maiúscula</value>
   </data>
+  <data name="AccessYourAccount" xml:space="preserve">
+    <value>Acesse sua conta</value>
+  </data>
 </root>

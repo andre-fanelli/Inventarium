@@ -36,3 +36,6 @@ body {
         margin-left: 0.1rem;
         margin-right: 0.1rem;
     }
+#computersTable td, th {
+    white-space: nowrap;
+}
