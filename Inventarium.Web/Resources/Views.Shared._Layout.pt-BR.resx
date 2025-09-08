@@ -117,6 +117,39 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DataTable_clovis" xml:space="preserve">
+    <value>Mostrar/Ocultar Colunas</value>
+  </data>
+  <data name="DataTable_info" xml:space="preserve">
+    <value>Página PAGE de PAGES</value>
+  </data>
+  <data name="DataTable_infoEmpty" xml:space="preserve">
+    <value>Nenhum dado disponível</value>
+  </data>
+  <data name="DataTable_infoFiltered" xml:space="preserve">
+    <value>(filtrado de MAX registros no total)</value>
+  </data>
+  <data name="DataTable_lengthMenu" xml:space="preserve">
+    <value>Exibir MENU registros por página</value>
+  </data>
+  <data name="DataTable_paginateFirst" xml:space="preserve">
+    <value>Primeira</value>
+  </data>
+  <data name="DataTable_paginateLast" xml:space="preserve">
+    <value>Última</value>
+  </data>
+  <data name="DataTable_paginateNext" xml:space="preserve">
+    <value>Próxima</value>
+  </data>
+  <data name="DataTable_paginatePrevious" xml:space="preserve">
+    <value>Anterior</value>
+  </data>
+  <data name="DataTable_search" xml:space="preserve">
+    <value>Pesquisar:</value>
+  </data>
+  <data name="DataTable_zeroRecords" xml:space="preserve">
+    <value>Nenhum registro encontrado</value>
+  </data>
   <data name="Dashboard" xml:space="preserve">
     <value>Painel</value>
   </data>
@@ -125,5 +158,14 @@
   </data>
   <data name="Logout" xml:space="preserve">
     <value>Sair</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Registrar</value>
+  </data>
+  <data name="DataTable_excel" xml:space="preserve">
+    <value>Excel</value>
+  </data>
+  <data name="DataTable_print" xml:space="preserve">
+    <value>Imprimir</value>
   </data>
 </root>

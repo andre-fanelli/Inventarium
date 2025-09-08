@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -115,6 +116,26 @@
     <script src="~/js/datatable-translations.js" asp-append-version="true"></script>
     <script src="~/js/datatable-config.js" asp-append-version="true"></script>
     <script src="~/js/delete-modal.js" asp-append-version="true"></script>
+
+    <script>
+        window.dtTranslations = window.dtTranslations || {};
+        window.dtTranslations.global = {
+            lengthMenu: '@Localizer["DataTable_lengthMenu"]',
+            zeroRecords: '@Localizer["DataTable_zeroRecords"]',
+            info: '@Localizer["DataTable_info"]',
+            infoEmpty: '@Localizer["DataTable_infoEmpty"]',
+            infoFiltered: '@Localizer["DataTable_infoFiltered"]',
+            search: '@Localizer["DataTable_search"]',
+            paginateFirst: '@Localizer["DataTable_paginateFirst"]',
+            paginateLast: '@Localizer["DataTable_paginateLast"]',
+            paginateNext: '@Localizer["DataTable_paginateNext"]',
+            paginatePrevious: '@Localizer["DataTable_paginatePrevious"]',
+            colvis: '@Localizer["DataTable_clovis"]',
+            excel: '@Localizer["DataTable_excel"]',
+            pdf: '@Localizer["DataTable_pdf"]',
+            print: '@Localizer["DataTable_print"]'
+        };
+    </script>
 
     @RenderSection("Scripts", required: false)
 

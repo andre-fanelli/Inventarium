@@ -1,9 +1,9 @@
 
-window.initDeleteModal = function(controllerName) {
+window.initDeleteModal = function (controllerName) {
     $('#deleteModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget); 
+        var button = $(event.relatedTarget);
         var deleteId = button.data('id');
-        $('#deleteItemId').val(deleteId); 
+        $('#deleteItemId').val(deleteId);
     });
 
     $('#confirmDelete').off('click').on('click', function () {
@@ -36,5 +36,5 @@ window.initDeleteModal = function(controllerName) {
                 });
             }
         });
-    };
+    });
 }
