@@ -121,16 +121,16 @@
     <value>Show/Hide Columns</value>
   </data>
   <data name="DataTable_info" xml:space="preserve">
-    <value>Page PAGE of PAGES</value>
+    <value>Showing _START_ to _END_ of _TOTAL_ entries</value>
   </data>
   <data name="DataTable_infoEmpty" xml:space="preserve">
-    <value>No data available</value>
+    <value>Showing 0 to 0 of 0 entries</value>
   </data>
   <data name="DataTable_infoFiltered" xml:space="preserve">
-    <value>(filtered from MAX total records)</value>
+    <value>(filtered from _MAX_ total entries)</value>
   </data>
   <data name="DataTable_lengthMenu" xml:space="preserve">
-    <value>Show MENU records per page</value>
+    <value>Show _MENU_ entries per page</value>
   </data>
   <data name="DataTable_paginateFirst" xml:space="preserve">
     <value>First</value>
@@ -167,5 +167,8 @@
   </data>
   <data name="DataTable_print" xml:space="preserve">
     <value>Print</value>
+  </data>
+  <data name="DataTable_processing" xml:space="preserve">
+    <value>Processing...</value>
   </data>
 </root>

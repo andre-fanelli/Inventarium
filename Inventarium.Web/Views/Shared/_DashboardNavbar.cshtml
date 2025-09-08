@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity;
-
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer Localizer
 @inject UserManager<ApplicationUser> UserManager
 @{
     var user = await UserManager.GetUserAsync(User);
@@ -8,77 +8,18 @@
 
 <nav class="navbar navbar-expand-lg mb-auto rounded-2" style="background-color: #e3f2fd;" w-100>
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Dashboard</a>
+        <a class="navbar-brand" href="#">@Localizer["Dashboard"]</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashboardNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="dashboardNavbar">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                <!-- Relatórios -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                        Reports
-                    </a>
-                    <ul class="dropdown-menu">
-
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle" href="#">PDF</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="@Url.Action("PcReportPdf", "Reports")">Desktops</a></li>
-                                <li><a class="dropdown-item" href="@Url.Action("NoteReportPdf", "Reports")">Notebooks</a></li>
-                                <li><a class="dropdown-item" href="@Url.Action("MonitorReportPdf", "Reports")">Monitors</a></li>
-                                <li><a class="dropdown-item" href="@Url.Action("PrinterReportPdf", "Reports")">Printers</a></li>
-                                <li><a class="dropdown-item" href="@Url.Action("NetworkReportPdf", "Reports")">Networks</a></li>
-                                <li><a class="dropdown-item" href="@Url.Action("TabletReportPdf", "Reports")">Tablets</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="@Url.Action("AllAssetsReportPdf", "Reports")">All Assets</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle" href="#">Excel</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="@Url.Action("PcReportExcel", "Reports")">Desktops</a></li>
-                                <li><a class="dropdown-item" href="@Url.Action("NoteReportExcel", "Reports")">Notebooks</a></li>
-                                <li><a class="dropdown-item" href="@Url.Action("MonitorReportExcel", "Reports")">Monitors</a></li>
-                                <li><a class="dropdown-item" href="@Url.Action("PrinterReportExcel", "Reports")">Printers</a></li>
-                                <li><a class="dropdown-item" href="@Url.Action("NetworkReportExcel", "Reports")">Networks</a></li>
-                                <li><a class="dropdown-item" href="@Url.Action("TabletReportExcel", "Reports")">Tablets</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="@Url.Action("AllAssetsReportExcel", "Reports")">All Assets</a></li>
-                            </ul>
-                        </li>
-
-                    </ul>
-                </li>
-
-                <!-- Gerenciar -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="gerenciarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Management
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="gerenciarDropdown">
-                        <li><a class="dropdown-item" href="@Url.Action("Create", "Users")">New User</a></li>
-                        <li><a class="dropdown-item" href="@Url.Action("Index", "Users")">List Users</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li>
-                            <a class="dropdown-item" href="javascript:void(0);" id="btnGerarExe"
-                               title="Generates an executable for inventory registration">Generate Program
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <!-- Arquivo -->
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Print</a>
+                    <span class="navbar-text">
+                        @Localizer["Company"]: @user.Company | @Localizer["Role"]: @(isAdmin ? "Administrator" : "Read Only")
+                    </span>
                 </li>
-
             </ul>
-            <span class="navbar-text">
-                Company: @user.Company | Role: @(isAdmin ? "Administrator" : "Read Only")
-            </span>
         </div>
     </div>
 </nav>
